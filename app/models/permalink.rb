@@ -1,14 +1,17 @@
 class Permalink
-  def initialize seed, alphabet_string
-    @seed = seed
-    @alphabet = alphabet_string.split('')
+  attr_accessor :url
+  include ActiveModel::Model
+
+  def self.for_url url
+    Permalink.new url: url
   end
 
-  def generate
-    if @alphabet.length == 1
-      @alphabet.first * @seed
-    else
-      @seed.b(@alphabet.length).to_s(@alphabet)
-    end
+  def short
+    # TODO to a.shestakov Using url.hash as seed value for now. Needs to be substituted with real seed.
+    PermalinkCode.new(url.hash).generate
+  end
+
+  def to_param
+    short
   end
 end
