@@ -27,3 +27,5 @@ require 'cucumber/rails'
 # recommended as it will mask a lot of errors for you!
 #
 ActionController::Base.allow_rescue = false
+
+World(Rails.application.routes.url_helpers)
