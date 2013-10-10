@@ -60,12 +60,8 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
-    database_cleaner (1.0.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
-    email_spec (1.5.0)
-      launchy (~> 2.1)
-      mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.0.2)
     gherkin (2.12.1)
@@ -184,8 +180,6 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   cucumber-rails
-  database_cleaner (= 1.0.1)
-  email_spec
   jbuilder (~> 1.2)
   jquery-rails
   launchy
