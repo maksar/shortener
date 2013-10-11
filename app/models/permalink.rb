@@ -1,17 +1,11 @@
 class Permalink
-  attr_accessor :url
-  include ActiveModel::Model
+  include ActiveAttr::Model
 
-  def self.for_url url
-    Permalink.new url: url
-  end
-
-  def short
-    # TODO to a.shestakov Using url.hash as seed value for now. Needs to be substituted with real seed.
-    PermalinkCode.new(url.hash).generate
-  end
+  attribute :url
+  attribute :short
+  attribute :count, type: Integer, default: 0
 
   def to_param
-    short
+    short + ENV["EXTRA_SUMBOL"]
   end
 end

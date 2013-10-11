@@ -1,5 +1,5 @@
 require 'radix'
-require_relative '../app/models/permalink_code'
+require_relative '../../app/models/permalink_code'
 
 describe PermalinkCode do
   it 'generates a permalink string for the given seed and alphabet' do
@@ -15,7 +15,6 @@ describe PermalinkCode do
   end
 
   it 'generates short permalink for the web alphabet' do
-    web_alphabet = (('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a).join
-    PermalinkCode.new(10_000_000, web_alphabet).generate.length.should == 4
+    PermalinkCode.new(10_000_000, ENV["ALPHABET"]).generate.length.should == 4
   end
 end

@@ -1,5 +1,5 @@
 class PermalinkCode
-  def initialize seed, alphabet_string = (('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a).join
+  def initialize seed, alphabet_string = ENV["ALPHABET"]
     @seed = seed
     @alphabet = alphabet_string.split('')
   end
