@@ -1,3 +1,7 @@
 language: ruby
 rvm:
   - 2.0.0
+services:
+  - redis-server
+env:
+  - ALPHABET="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" EXTRA_SUMBOL="+" REDIS_URL="redis://localhost"
