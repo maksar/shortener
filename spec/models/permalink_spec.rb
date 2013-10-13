@@ -1,7 +1,10 @@
 require_relative '../spec_helper'
 
 describe Permalink do
-  it { should have_attribute(:count).of_type(Integer).with_default_value_of(0) }
+  Browser.all.each do |browser|
+    it { should have_attribute(browser.abbreviation).of_type(Integer).with_default_value_of(0) }
+  end
+  it { should have_attribute(:other).of_type(Integer).with_default_value_of(0) }
   it { should have_attribute(:url) }
   it { should have_attribute(:short) }
 

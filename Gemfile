@@ -25,6 +25,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'pry'
   gem 'rspec-rails'
 end
 
@@ -36,6 +37,7 @@ group :test do
   gem 'simplecov', :require => false
   gem 'capybara'
   gem 'cucumber-rails', :require => false
+  gem 'capybara-user_agent'
   gem 'launchy'
 end
 
@@ -43,3 +45,4 @@ gem 'radix'
 gem 'redis'
 gem 'active_attr'
 gem 'figaro'
+gem 'useragent'

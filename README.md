@@ -8,7 +8,16 @@ Shortener is a publicly available service (with no authentication and authorizat
 
 Shortening is a generation of unique (as short as possible) hash from the given URL. Shortened link will be accessed forever, while service exists. User might want to choose own hash (nicely readable) if it is not taken already.
 
-System is tracking usage statistics to the shortened link (by browser). Statistics is available to everybody, not only to the user, who shortened the URL. To view stats page, it is needed to add a '+' (configurable) to the end of shortened link.
+System is tracking usage statistics to the shortened link by browser. Statistics is available to everybody, not only to the user, who shortened the URL. To view stats page, it is needed to add a '+' (configurable) to the end of shortened link.
+Supported browsers (with help of ```useragent``` gem):
+
+* Firefox
+* Opera
+* Chrome
+* Safari
+* Internet Explorer :boom:
+
+All other browsers are registered as "Other".
 
 ### Validation
 

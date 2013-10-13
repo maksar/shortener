@@ -7,10 +7,11 @@ class PermalinkRepo
   end
 
   def recall short
-    url, count = @redis.hmget short, :url, :count
+    result = @redis.hgetall short
 
-    return EmptyPermalink.new unless url
-    Permalink.new url: url, count: count.to_i, short: short
+    return EmptyPermalink.new if result.empty?
+
+    Permalink.new result.merge short: short
   end
 
   def register url
@@ -20,8 +21,8 @@ class PermalinkRepo
     recall short
   end
 
-  def count short
-    @redis.hincrby short, :count, 1
+  def count short, browser
+    @redis.hincrby short, browser, 1
 
     recall short
   end

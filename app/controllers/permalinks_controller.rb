@@ -6,7 +6,7 @@ class PermalinksController < ApplicationController
 
   def show
     unless details_request?
-      return redirect_to PermalinkRepo.instance.count(params[:id]).url
+      return redirect_to PermalinkRepo.instance.count(params[:id], BrowserDetector.new(request.user_agent).browser).url
     end
 
     @permalink = PermalinkRepo.instance.recall params[:id].gsub(/#{Regexp.quote(ENV["EXTRA_SUMBOL"])}$/, '')

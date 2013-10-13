@@ -1,3 +1,6 @@
-count: <%= @permalink.count %>
+<% Browser.all.each do |browser| %>
+  <%= browser.name %>: <%= @permalink.send(browser.abbreviation) %> times
+<% end %>
+Other: <%= @permalink.other %> times
 
 <%= link_to 'Another URL', root_path , class: 'btn btn-primary' %>

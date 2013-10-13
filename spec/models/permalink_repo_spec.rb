@@ -12,8 +12,11 @@ describe PermalinkRepo do
   end
 
   it 'should fill rest of permalink attributes after registering' do
-    registered_permalink.count.should be_zero
     registered_permalink.short.should_not be_empty
+    Browser.all.each do |browser|
+      registered_permalink.send(browser.abbreviation).should be_zero
+    end
+
   end
 
   it 'should recall permalink by short version' do
@@ -25,11 +28,13 @@ describe PermalinkRepo do
   end
 
   it 'should fill rest of permalink attributes after recalling' do
-    subject.recall(registered_permalink.short).count.should be_zero
     subject.recall(registered_permalink.short).short.should_not be_empty
+    Browser.all.each do |browser|
+      subject.recall(registered_permalink.short).send(browser.abbreviation).should be_zero
+    end
   end
 
   it 'should count usages of the permalink' do
-    subject.count(registered_permalink.short).count.should == subject.count(registered_permalink.short).count - 1
+    subject.count(registered_permalink.short, :other).other.should == subject.count(registered_permalink.short, :other).other - 1
   end
 end

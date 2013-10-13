@@ -3,7 +3,11 @@ class Permalink
 
   attribute :url
   attribute :short
-  attribute :count, type: Integer, default: 0
+
+  Browser.all.each do |browser|
+    attribute browser.abbreviation, type: Integer, default: 0
+  end
+  attribute :other, type: Integer, default: 0
 
   def to_param
     short + ENV["EXTRA_SUMBOL"]
