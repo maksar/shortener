@@ -10,3 +10,9 @@ Scenario: recalling permalink
   Then I should be redirected to "http://google.com/"
   And permalink usages count for "Firefox" should be 1
 
+Scenario: recalling not registered permalink
+  When I have no shortened permalink
+  And I am navigating to to it with "Internet Explorer"
+  Then I should be redirected to main page
+  And I should be notified about absence of Hash
+

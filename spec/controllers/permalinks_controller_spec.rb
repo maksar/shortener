@@ -17,6 +17,14 @@ describe PermalinksController do
     let(:url) { "http://test/" }
     let(:permalink) { PermalinkRepo.instance.register url }
 
+    context 'unknown :id submitted' do
+      before { get :show, id: 'unknown' + permalink.to_param }
+
+      it 'should redirect to main page' do
+        response.should redirect_to root_path
+      end
+    end
+
     context ':id is submitted with extra symbol' do
       before { get :show, id: permalink.to_param }
 
@@ -32,9 +40,9 @@ describe PermalinksController do
     context ':id is submitted without extra symbol' do
       before { get :show, id: permalink.short }
 
-       it 'should redirect to recalled url' do
+      it 'should redirect to recalled url' do
         response.should redirect_to permalink.url
-       end
+      end
     end
   end
 

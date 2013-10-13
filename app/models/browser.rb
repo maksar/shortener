@@ -10,7 +10,7 @@ class Browser
     [
       Browser.new("Firefox", :firefox),
       Browser.new("Opera", :opera),
-      Browser.new("Chrome", :chome),
+      Browser.new("Chrome", :chrome),
       Browser.new("Internet Explorer", :ie),
       Browser.new("Safari", :safari)
     ]
