@@ -1,0 +1,29 @@
+ru:
+  helpers:
+    submit:
+      permalink:
+        create: "Сократить"
+  permalink:
+    not_found: "Извините, мы не нашли ссылку в наших записях"
+    short:
+      placeholder: "Хэш"
+    url:
+      placeholder: "URL для сокращения"
+  activemodel:
+    errors:
+      models:
+        permalink:
+          attributes:
+            short:
+              used: "Простите, но этот хэш уже занят"
+            url:
+              blank: "В попытке сократить пустую строку мало смысла..."
+  pages:
+    details:
+      browser: "Браузер"
+      hit_count: "Количество посещений"
+      other: "Другой"
+      another_url: "Еще раз"
+      your_link: "Краткая ссылка:"
+      your_full_link: "Оригинальная ссылка:"
+      stats: "Статистика посещений"

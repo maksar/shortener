@@ -1,6 +1,22 @@
-<% Browser.all.each do |browser| %>
-  <%= browser.name %>: <%= @permalink.send(browser.abbreviation) %> times
-<% end %>
-Other: <%= @permalink.other %> times
-
-<%= link_to 'Another URL', root_path , class: 'btn btn-primary' %>
+<div class="details">
+  <div class="alert alert-info"><%= t "pages.details.your_link" %> <%= link_to short_url(@permalink.short), short_url(@permalink.short), target: "_blank" %></div>
+  <div class="alert alert-warning"><%= t "pages.details.your_full_link" %> <%= link_to @permalink.url, @permalink.url, target: "_blank" %></div>
+  <table class="table table-hover">
+    <legend><%= t "pages.details.stats" %></legend>
+    <tr>
+      <th><%= t "pages.details.browser" %></th>
+      <th><%= t "pages.details.hit_count" %></th>
+    </tr>
+    <% Browser.all.each do |browser| %>
+      <tr>
+        <td><%= browser.name %></td>
+        <td><%= @permalink.send(browser.abbreviation) %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= t "pages.details.other" %></td>
+      <td><%= @permalink.other %></td>
+    </tr>
+  </table>
+  <%= link_to t("pages.details.another_url"), root_path, class: 'btn btn-success btn-large' %>
+</div>

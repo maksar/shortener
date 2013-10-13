@@ -1,12 +1,19 @@
-<%= simple_form_for @permalink do |f| %>
-  <%= f.error_notification %>
-
+<%= simple_form_for @permalink, html: {class: "form-horizontal"} do |f| %>
   <div class="form-inputs">
-    <%= f.input :url %>
-    <%= f.input :short %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="long-pencil">
+      <div class="spacer"><%= f.error :url, class: "alert alert-error" %></div>
+      <%= f.input_field :url, placeholder: t("permalink.url.placeholder") %>
+      <%= image_tag "long.png" %>
+      <div class="short-pencil">
+        <div class="spacer"><%= f.error :short, class: "alert alert-error" %></div>
+        <%= f.input_field :short, placeholder: t("permalink.short.placeholder") %>
+        <%= image_tag "short.png" %>
+      </div>
+      <div class="button-wrapper">
+        <%= button_tag(type: 'submit', class: "btn btn-success btn-large") do %>
+          <i class="icon-ok icon-pencil"></i> <%= t("helpers.submit.permalink.create") %>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>

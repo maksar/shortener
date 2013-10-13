@@ -45,6 +45,13 @@ List of allowed characters to use for short URLs.
 
 URL to the [Redis](http://redis.io/) installation.
 
+### Localization
+
+System supports two languages:
+
+* English
+* Russian
+
 ### Testing
 
 System contains rspec (unit) and cucumber (integration) tests.

@@ -2,8 +2,8 @@ When(/^I provided "(.*?)" URL for shortening$/) do |url|
   @url = url
 
   visit root_url
-  fill_in "Url", with: url
-  click_on "Create"
+  find("#permalink_url").set url
+  find("button").click
 end
 
 Then(/^I should be redirected to permalink details$/) do
@@ -19,9 +19,9 @@ When(/^I provided "(.*?)" URL and "(.*?)" as desired hash$/) do |url, short|
   @url = url
 
   visit root_url
-  fill_in "Url", with: url
-  fill_in "Short", with: short
-  click_on "Create"
+  find("#permalink_url").set url
+  find("#permalink_short").set short
+  find("button").click
 end
 
 When(/^I provided "(.*?)" URL and not used hash as desired one$/) do |url|

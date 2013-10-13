@@ -13,6 +13,6 @@ end
 
 Then(/^I should see usage statistics$/) do |table|
   table.rows.each do |browser, times|
-    page.should have_content "#{browser}: #{times} time"
+    page.should have_content "#{browser} #{times}"
   end
 end

@@ -1,12 +1,29 @@
 en:
+  helpers:
+    submit:
+      permalink:
+        create: "Shorten"
   permalink:
-    not_found: "Sorry, that hash was not found in our database."
+    not_found: "Sorry, that hash was not found in our database"
+    short:
+      placeholder: "Permalink"
+    url:
+      placeholder: "URL for shortening"
   activemodel:
     errors:
       models:
         permalink:
           attributes:
             short:
-              used: "Sorry, that hash was already been used."
+              used: "Sorry, that hash was already been used"
             url:
-              blank: "Please, specify URL to be shortened."
+              blank: "Please, specify URL to be shortened"
+  pages:
+    details:
+      browser: "Browser"
+      hit_count: "Hit count"
+      other: "Other"
+      another_url: "Shorten again"
+      your_link: "Your short link is:"
+      your_full_link: "Original link is:"
+      stats: "Usage statistics"

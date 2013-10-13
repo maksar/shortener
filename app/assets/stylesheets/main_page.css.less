@@ -1,0 +1,43 @@
+@long: 720px;
+@short: 272px;
+
+form {
+  max-width: @long;
+  margin: auto;
+
+  .form-inputs {
+    margin: auto;
+
+    .long-pencil {
+      max-width: @long;
+
+      .spacer {
+        margin-bottom: 20px;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .short-pencil {
+        width: 40%;
+        max-width: @short;
+
+        float: left;
+      }
+
+      .button-wrapper {
+        width: 55%;
+        float: right;
+
+        button {
+          display: block;
+          width: 100%;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}
