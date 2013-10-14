@@ -24,7 +24,8 @@ class PermalinkRepo
       return hash_already_used(permalink) unless insert(short, url)
     else
       # Trying to insert until successful.
-      short = generate_next_short until insert(short, url)
+      until insert(short = generate_next_short, url)
+      end
     end
     recall short
   end

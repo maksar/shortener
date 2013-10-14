@@ -1,5 +1,4 @@
-require 'radix'
-require_relative '../../app/models/permalink_code'
+require_relative '../spec_helper'
 
 describe PermalinkCode do
   it 'generates a permalink string for the given seed and alphabet' do
