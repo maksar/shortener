@@ -9,4 +9,5 @@ require "active_attr/rspec"
 
 RSpec.configure do |config|
   config.order = "random"
+  config.color = true
 end
